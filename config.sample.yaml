@@ -1,0 +1,54 @@
+algorithm: base
+
+token_limit: 0
+line_limit: null
+
+profile: true
+profile_path: out.prof
+
+base:
+  parameters:
+    min_threshold: 0.45
+    window_hours: 1
+    slide_mins: 1
+    burst_span: 5
+    burst_threshold: 1
+    cluster_limit: 5
+    link_percentage: 0.5
+    burst_history: 10
+    top_clusters: null
+embedding:
+  parameters:
+    min_threshold: 0.2
+    match_threshold: 0.4
+    max_threshold: 0.95
+    entity_threshold: 4.5
+    window_hours: 1
+    slide_mins: 1
+    burst_span: 5
+    burst_threshold: 1
+    cluster_limit: 5
+    link_percentage: 0.5
+    burst_history: 10
+    top_clusters: null
+    top_terms: 20
+    entity_mmap_mode: r
+
+twitter:
+  input: data/twitter/LondonApr2020-1
+  geo: data/twitter/geoLondonApr2020-1
+  nongeo: data/twitter/nongeoLondonApr2020-1
+wikidata:
+  embedding: data/wikidata/wikidata_translation_v1_vectors.npy
+  titlemap: data/wikidata/wikidata_translation_v1_names.json
+  parentmap: data/wikidata/par_child_dict.json
+spam:
+  model: data/model/model
+  vectorizer: data/model/vectorizer
+  nonspam: data/honeypot/legitimate_users_tweets.txt
+  spam: data/honeypot/content_polluters_tweets.txt
+  
+output:
+  event: data/output/event
+  eventstats: data/output/eventstats
+  mergestats: data/output/mergestats

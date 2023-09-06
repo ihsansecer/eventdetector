@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# ide
+.vscode
+.idea
+
+# stanford nlp toolkit
+stanford-corenlp/
+
+# data path
+data/
+data
+
+# config
+config.yaml
